@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css">
+    <!-- App specific CSS and meta control for iOS. Need to add Android later. -->
+    <link href="css/ion.rangeSlider.css" rel="stylesheet" type="text/css">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/ion.rangeSlider.skinModern.css" rel="stylesheet" type="text/css">
+    <link href="css/app.css" rel="stylesheet" type="text/css">
+    <meta content="width=device-width, initial-scale=1.0, scrollable=no, user-scalable=no" name="viewport">
+    <title></title>
+</head>
+
+<body>
+    <form id="formValidate">
+        <input type="hidden" id='signUpEmail' name="signup_email">
+        <div id="main">
+            <div class="content">
+                <div class="row">
+                    <div class="col s1 m4 l3">
+                        &nbsp;
+                    </div>
+                    <div class="col s10 m4 l6">
+                        <h4 class="left-align">Let's start by having you tell us more about yourself.</h4>
+                    </div>
+                    <div class="col s1 m4 l3"></div>
+                </div>
+                <div class="row">
+                    <div class="col s1 m4 l3">
+                        &nbsp;
+                    </div>
+                    <div class="col s10 m4 l6">
+                        <h5>Are you ...</h5>
+                        <h5 class="empty">&nbsp;</h5>
+                        <select id="carer_role" name="carer_role">
+                            <option disabled selected value="">
+                            </option>
+                            <option value="pregnant">
+                                Pregnant
+                            </option>
+                            <option value="mum">
+                                Mum
+                            </option>
+                            <option value="dad">
+                                Dad
+                            </option>
+                            <option value="grandparent">
+                                Grandparent
+                            </option>
+                            <option value="other_carer">
+                                Other carer
+                            </option>
+                            <option value="health_practitioner">
+                                Health practitioner/researcher/student
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col s1 m4 l3"></div>
+                </div>
+            </div>
+            <div class="row btn_right">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <div class="right-align">
+                        <a class="waves-effect waves-light btn" id="main_next">next</a>
+                    </div>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+        </div>
+        <div class="content" id="pregnant">
+            <div class="row btn_left">
+                <div class="col s1 m4 l3">
+                    <a class="waves-effect waves-light btn" href="#main">prev</a>
+                </div>
+                <div class="col s10 m4 l6 left-align"></div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">What is your first name?</h5>
+                    <input name="pregnant_mum_name">
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5>What is your baby's expected due date?</h5>
+                    <input class="datepicker" name="baby_due_date" placeholder="Tap here to select date." type="date">
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row btn_right">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6 right-align">
+                    <a class="waves-effect waves-light btn" href="#thanks">next</a>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+        </div>
+        <div class="content" id="baby_info1">
+            <div class="row btn_left">
+                <div class="col s1 m4 l3">
+                    <a class="waves-effect waves-light btn" href="#main">prev</a>
+                </div>
+                <div class="col s10 m4 l6 left-align"></div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align" id="baby_name_label">What is your baby's first name?</h5>
+                    <input id="baby_first_name" name="baby_first_name">
+                    <h5 class="empty">&nbsp;</h5>
+                    <h5 class="left-align" id="baby_dob_label">What is your baby's date of birth?</h5>
+                    <input class="datepicker" name="baby_dob" type="date">
+                    <h5 class="empty">&nbsp;</h5>
+                    <h5 class="left-align" id="baby_gender_label">Is your baby a ...</h5>
+                    <div class="input-field">
+                        <select class="left-align" name="baby_gender">
+                            <option disabled selected value="">
+                            </option>
+                            <option value="0">
+                                Boy
+                            </option>
+                            <option value="1">
+                                Girl
+                            </option>
+                        </select>
+                        <div class="error hide">Please select one option</div>
+                    </div>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row btn_right">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6 right-align">
+                    <a class="waves-effect waves-light btn" href="#baby_info2">next</a>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+        </div>
+        <div class="content" id="baby_info2">
+            <div class="row btn_left">
+                <div class="col s1 m4 l3">
+                    <a class="waves-effect waves-light btn" href="#baby_info1">prev</a>
+                </div>
+                <div class="col s10 m4 l6 left-align"></div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align" id="feeding_method_label">What is your baby's current feeding method?</h5>
+                    <select id="feeding_method" name="feeding_method">
+                        <option disabled selected value="">
+                        </option>
+                        <option value="breast">
+                            Breastfeeding
+                        </option>
+                        <option value="formula">
+                            Formula Feeding
+                        </option>
+                        <option value="mixed">
+                            Both Breast and Formula Feeding
+                        </option>
+                    </select>
+                    <div class="error hide">Please select one option</div>
+                    <h5 class="empty">&nbsp;</h5>
+                    <h5 class="empty"></h5>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row hide" id="formula_age">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">How old was your baby when you first introduced formula?</h5>
+                    <h5>&nbsp;</h5>
+                    <h5 class="left-align"><span id="formula_label">0</span> weeks</h5>
+                    <p class="range-field">
+                        <input id="formula_slider" name="formula_age" type="text">
+                    </p>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row btn_right">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6 right-align">
+                    <a class="waves-effect waves-light btn" href="#baby_info3">next</a>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+        </div>
+        <div class="content" id="baby_info3">
+            <div class="row btn_left">
+                <div class="col s1 m4 l3">
+                    <a class="waves-effect waves-light btn" href="#baby_info2">prev</a>
+                </div>
+                <div class="col s10 m4 l6 left-align"></div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row" id="solid_foods">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align" id="solid_foods_label">Has your baby started eating solid foods?</h5>
+                    <select id="sf_dropdown" name="sf_flag">
+                        <option disabled selected value="">
+                        </option>
+                        <option value="yes">
+                            Yes
+                        </option>
+                        <option value="no">
+                            No
+                        </option>
+                        <option value="na">
+                            I don't know
+                        </option>
+                    </select>
+                    <div class="error hide">Please select one option</div>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row hide" id="sf_age">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">How old was your baby when you first introduced solids?</h5>
+                    <h5>&nbsp;</h5>
+                    <h5 class="left-align"><span id="sf_label">0</span> weeks</h5>
+                    <p class="range-field">
+                        <input id="sf_slider" name="sf_age" type="text">
+                    </p>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row btn_right">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <a class="waves-effect waves-light btn" href="#carer_info1">next</a>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+        </div>
+        <div class="content" id="carer_info1">
+            <div class="row btn_left">
+                <div class="col s1 m4 l3">
+                    <a class="waves-effect waves-light btn" href="#baby_info3">prev</a>
+                </div>
+                <div class="col s10 m4 l6 left-align"></div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">What is your first name?</h5>
+                    <input class="validate" id="carer_name" name="carer_name" type="text">
+                    <div class="errorTxt1"></div>
+                    <h5 class="empty">&nbsp;</h5>
+                    <h5 class="left-align">What is your postal code?</h5>
+                    <input class="validate" id="postcode" name="postcode" type="tel">
+                    <h5 class="empty">&nbsp;</h5>
+                </div>
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">What is your age?</h5>
+                    <select id="carer_age" name="carer_age">
+                        <option disabled selected value="">
+                        </option>
+                        <option value="12-17">
+                            12-17 years
+                        </option>
+                        <option value="18-24">
+                            18-24 years
+                        </option>
+                        <option value="25-34">
+                            25-34 years
+                        </option>
+                        <option value="35-40">
+                            35-40 years
+                        </option>
+                        <option value="40-50">
+                            40-50 years
+                        </option>
+                        <option value="50-60">
+                            50-60 years
+                        </option>
+                        <option value="60-70">
+                            60-70 years
+                        </option>
+                        <option value="70-80">
+                            70-80 years
+                        </option>
+                        <option value="80-over">
+                            80 or more years
+                        </option>
+                    </select>
+                    <div class="error hide">Please select one option</div>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row btn_right">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6 right-align">
+                    <a class="waves-effect waves-light btn" href="#carer_info2">next</a>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+        </div>
+        <div class="content" id="carer_info2">
+            <div class="row btn_left">
+                <div class="col s1 m4 l3">
+                    <a class="waves-effect waves-light btn" href="#carer_info1">prev</a>
+                </div>
+                <div class="col s10 m4 l6 left-align"></div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">What is the main language you speak at home?</h5>
+                    <select id="carer_language" name="language">
+                        <option disabled selected value="">
+                            Choose your option
+                        </option>
+                        <option value="english">
+                            English
+                        </option>
+                        <option value="mandarin">
+                            Mandarin
+                        </option>
+                        <option value="italian">
+                            Italian
+                        </option>
+                        <option value="arabic">
+                            Arabic
+                        </option>
+                        <option value="cantonese">
+                            Cantonese
+                        </option>
+                        <option value="greek">
+                            Greek
+                        </option>
+                        <option value="vietnamese">
+                            Vietnamese
+                        </option>
+                        <option value="spanish">
+                            Spanish
+                        </option>
+                        <option value="hindi">
+                            Hindi
+                        </option>
+                        <option value="tagalog">
+                            Tagalog
+                        </option>
+                        <option value="german">
+                            German
+                        </option>
+                        <option value="other">
+                            Other
+                        </option>
+                    </select>
+                    <div class="error hide">Please select one option</div>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row hide" id="other_language">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">Please specify the language spoken at home</h5>
+                    <input class="validate" id="language" name="other_language" type="text">
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">What is your country of birth?</h5>
+                    <select id="carer_country" name="carer_country">
+                        <option disabled selected value="">
+                            Choose your option
+                        </option>
+                        <option value="Australia">
+                            Australia
+                        </option>
+                        <option value="New Zealand">
+                            New Zealand
+                        </option>
+                        <option value="UK">
+                            United Kingdom, Channel Islands and Isle of Man
+                        </option>
+                        <option value="China">
+                            China
+                        </option>
+                        <option value="India">
+                            India
+                        </option>
+                        <option value="Philippines">
+                            Philippines
+                        </option>
+                        <option value="Vietnam">
+                            Vietnam
+                        </option>
+                        <option value="Italy">
+                            Italy
+                        </option>
+                        <option value="South Africa">
+                            South Africa
+                        </option>
+                        <option value="Malaysia">
+                            Malaysia
+                        </option>
+                        <option value="other">
+                            Other
+                        </option>
+                    </select>
+                    <div class="error hide">Please select one option</div>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row hide" id="other_country">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align" for="country">Please specify your country of birth</h5>
+                    <input class="validate" id="country" name="other_country" type="text">
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row btn_right">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6 right-align">
+                    <a class="waves-effect waves-light btn" href="#carer_info3">next</a>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+        </div>
+        <div class="content" id="carer_info3">
+            <div class="row btn_left">
+                <div class="col s1 m4 l3">
+                    <a class="waves-effect waves-light btn" href="#carer_info2">prev</a>
+                </div>
+                <div class="col s10 m4 l6 left-align"></div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5>How did you find out about this App?</h5>
+                    <select id="source" name="from_where">
+                        <option disabled selected value="">
+                            Choose your option
+                        </option>
+                        <option value="Facebook">
+                            Facebook
+                        </option>
+                        <option value="Parenting website">
+                            Parenting website
+                        </option>
+                        <option value="Health professional recommendation">
+                            Health professional recommendation
+                        </option>
+                        <option value="Family">
+                            Family
+                        </option>
+                        <option value="Friends">
+                            Friends
+                        </option>
+                        <option value="other">
+                            Other
+                        </option>
+                    </select>
+                    <div class="error hide">Please select one option</div>
+                    <h5 class="empty">&nbsp;</h5>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row hide" id="other_source">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+                    <h5 class="left-align">Please specify how did you find out about this App?</h5>
+                    <input class="validate" name="other_from_where" type="text">
+                    <h5 class="empty">&nbsp;</h5>
+                </div>
+                <div class="col s1 m4 l3"></div>
+            </div>
+            <div class="row" id="other_source">
+                <div class="col s1 m4 l3">
+                    &nbsp;
+                </div>
+                <div class="col s10 m4 l6">
+     <!--                <h5 class="left-align">What is your email address?</h5>
+     <input class="validate" name="email" type="text"> -->
+     <h5 class="empty">&nbsp;</h5>
+     <h5 class="left-align">What is your mobile phone number?(Optional)</h5>
+     <input class="validate" id="phone" name="mobile" type="tel">
+ </div>
+ <div class="col s1 m4 l3"></div>
+</div>
+<div class="row btn_right">
+    <div class="col s1 m4 l3">
+        &nbsp;
+    </div>
+    <div class="col s10 m4 l6 right-align">
+        <a class="waves-effect waves-light btn" href="#thanks">next</a>
+    </div>
+    <div class="col s1 m4 l3"></div>
+</div>
+</div>
+<div class="content" id="health_practitioner">
+    <div class="row btn_left">
+        <div class="col s1 m4 l3">
+            <a class="waves-effect waves-light btn" href="#main">prev</a>
+        </div>
+        <div class="col s10 m4 l6 left-align"></div>
+        <div class="col s1 m4 l3"></div>
+    </div>
+    <div class="row">
+        <div class="col s1 m4 l3">
+            &nbsp;
+        </div>
+        <div class="col s10 m4 l6">
+            <h5 class="left-align">Could you please tell us your specific role?</h5>
+            <select id="hp_role" name="health_practitioner_role">
+                <option disabled selected value="">
+                </option>
+                <option value="Maternal and child nurse">
+                    Maternal and child nurse/ child and family nurse
+                </option>
+                <option value="Lactation consultant">
+                    Lactation consultant
+                </option>
+                <option value="Midwife">
+                    Midwife
+                </option>
+                <option value="GP">
+                    GP
+                </option>
+                <option value="Practice nurse">
+                    Practice nurse
+                </option>
+                <option value="Dietitian">
+                    Dietitian
+                </option>
+                <option value="Social worker">
+                    Social worker
+                </option>
+                <option value="Researcher">
+                    Researcher
+                </option>
+                <option value="Student">
+                    Student
+                </option>
+                <option value="other">
+                    Other
+                </option>
+            </select>
+            <div class="error hide">Please select one option</div>
+        </div>
+        <div class="col s1 m4 l3"></div>
+    </div>
+    <div class="row hide" id="other_hp">
+        <div class="col s1 m4 l3">
+            &nbsp;
+        </div>
+        <div class="col s10 m4 l6">
+            <h5 class="left-align">Could you please tell us your specific role?</h5>
+            <input class="validate" id="hp_input" name="other_health_practitioner_role" type="text">
+            <h5 class="empty">&nbsp;</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s1 m4 l3">
+            &nbsp;
+        </div>
+        <div class="col s10 m4 l6">
+            <h5 class="left-align">What is your post code of the location where you work or study?</h5>
+            <input class="validate" id="postcode" name="postcode" type="tel">
+            <h5 class="empty">&nbsp;</h5>
+            <h5 class="left-align">Can you please tell us the organisation you work for or where you study?</h5>
+            <input class="validate" id="organisation" name="health_practitioner_organisation" type="text">
+        </div>
+    </div>
+    <div class="row btn_right">
+        <div class="col s1 m4 l3">
+            &nbsp;
+        </div>
+        <div class="col s10 m4 l6 right-align">
+            <a class="waves-effect waves-light btn" href="#thanks">next</a>
+        </div>
+        <div class="col s1 m4 l3"></div>
+    </div>
+</div>
+<div class="content" id="thanks">
+    <div class="row center-align">
+        <div class="col s1 m4 l3">
+            &nbsp;
+        </div>
+        <div class="col s10 m4 l6">
+            <h4 id="message_for_user">Saving survey information.</h4>
+            <div class="preloader-wrapper big active hide">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s1 m4 l3"></div>
+        </div>
+    </div>
+</form>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js" type="text/javascript"></script>
+<script src="js/materialize.min.js" type="text/javascript"></script>
+<script src="js/init.js"></script>
+<script src="js/range.js"></script>
+<script src="js/ion.rangeSlider.min.js"></script>
+<script src="js/serializeToJSON.js"></script>
+<script src="js/jquery.session.js"></script>
+</body>
+
+</html>
