@@ -1,0 +1,52 @@
+<div class="card" ng-form="forumForm">
+<form name="postForm" ng-controller="PostFormController as postFormCtrl" ng-submit="addPost()">
+    <!-- Title -->
+    <!--<div class="row">
+        <div class="input-field col s6">
+            <input id="title" type="text" length="20" ng-model="post.title" required>
+            <label for="title">Title</label>
+        </div>
+    </div>-->
+
+    <!-- Content -->
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea class="materialize-textarea" placeholder="What's on your mind?" length="140" ng-model="post.content" required></textarea>
+            <!--<label for="post_content">Content</label>-->
+        </div>
+    </div>
+
+    <!-- Image -->
+    <!--<span class="btn" ng-click='click()'>Image</span>-->
+
+    <div class="row">
+        <div class="input-field col s12">
+            <!--ng-class="{forumForm.$invalid:ng-disabled}" ng-disabled="forumForm.$invalid"-->
+            <button class="mbn-button pull-right"" type="button">
+                <span ng-click="toggleSubmit()">
+                    Cancel
+                </span>
+            </button>
+            
+            <button type="submit" ng-disabled="forumForm.$invalid" class="mbn-button" type="submit" name="action">
+                <span ng-click="submitByCode()" ng-class="{'mbn-icon-selected':forumForm.$invalid}"  ng-disabled="forumForm.$invalid">
+                    Post
+                </span>
+            </button>
+            <button class="mbn-button" style="margin-right: 9vw;" type="button">
+                <span ng-click="click()">
+                    <i class="fa fa-camera fa-lg"></i> &nbsp; Add image
+                </span>
+            </button>
+            <!--<button class="btn waves-effect waves-light pull-right" type="submit" name="action" >Submit
+            </button>
+             <button class="btn waves-effect waves-light pull-right" name="action" ng-click="toggleSubmit()" >Cancel
+            </button>-->
+            
+        </div>
+    </div>
+        <div class="card-image waves-block" ng-hide="post.image==null">
+        <img  ng-src="{{post.image}}"/>
+        </div>
+
+</div>

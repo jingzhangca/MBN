@@ -1,0 +1,399 @@
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
+    font-size: 120%;
+}
+
+a {
+    color: #339966;
+    font-weight: bold;
+}
+
+.sign-in-card {
+    padding: 15px;
+    opacity: 0.7;
+    
+    height: 40vh;
+}
+
+html {
+    background-image: url("../images/signin-bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+ul {
+    
+    margin-left: 5vw;
+}
+
+li {
+    list-style-type: circle !important;
+    padding-bottom: 10px;
+}
+
+.sign-in-body {
+    background-color: #f0f0f0; 
+    padding: 40vw 20px 50px 20px;
+}
+
+.sign-in-logo {
+    position: fixed;
+    top: 24vh;
+    left: 8vw;
+    -webkit-filter: drop-shadow(1px 1px 4px #808285);
+    
+    z-index: 9999;
+    max-width: 20%;
+    max-height: 20%;
+}
+
+.sign-in-appname {
+    position: fixed;
+    left: 30vw;
+    top: 26vh;
+    font-size: 200%;
+    color: #339966;
+    z-index: 9999;
+    -webkit-filter: drop-shadow(1px 1px 4px #ffffff);
+}
+
+.mbn-textarea {
+    border: 0px solid #fff !important;
+    border-bottom: 0px solid #fff !important;
+    box-shadow: 0 1px 0 0 #fff !important;
+    
+    outline: none !important;
+    outline-color: #339966 !important;
+}
+
+.mbn-button {
+    float: right; 
+    margin-right: 3vw; 
+    color: #339966; 
+    line-height: 3; 
+    border: none; 
+    background-color: #fff;
+}
+
+.mbn-forum-action {
+    font-size: 90%; 
+    text-align: center;
+    color: #339966;
+}
+
+.mbn-action-menu {
+    font-weight: normal !important; 
+    color: #339966 !important;
+}
+
+.mbn-menu-desc {
+    width: *;
+}
+
+.mbn-td {
+    width: 5%;
+}
+
+.mbn-menu-arrow {
+    max-width: 5%;
+    width: 5%;
+}
+
+.mbn-sticky {
+    position: fixed;
+    top: 150px;
+}
+
+.mbn-nav {
+	background-color: #f0f0f0;
+}
+
+.mbn-icon {
+	width: 20%; 
+	text-align: center;
+    color: #339966;
+    position: relative;
+    line-height: normal;
+    bottom: 4px;
+}
+
+.mbn-icon-selected {
+    color: #6699cc;
+}
+
+.mbn-section {
+    color: #6699cc;
+    font-family: roboto;
+    font-weight: 500;
+    font-size: 14pt;
+}
+
+.mbn-text {
+    color: #000000;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 11pt;
+}
+
+.mbn-text-image {
+    width: 100%;
+}
+
+.mbn-content {
+    position: relative;
+    top: 2px;
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+}
+
+.mbn-card {
+    margin: 0px !important;
+}
+
+.mbn-footer {
+	position: fixed; 
+	bottom: 0px; 
+	width: 100%;
+}
+
+.mbn-avatar-card {
+    background-color: #f9f9f9;
+    min-height: 140px;
+}
+
+.mbn-avatar-text {
+    font-family: roboto; 
+    font-size: 12pt;
+}
+
+.mbn-update-text {
+    font-family: roboto; 
+    font-size: 12pt;
+}
+
+/*********************
+	Forum
+**********************/
+@font-face {
+    font-family: roboto;
+	src: url('font/roboto-regular.ttf');	
+}
+
+.title-font {
+	font-family: littlebird;
+	font-weight: bold;
+	font-size: 280% !important;
+}
+
+
+
+/*********************
+  Media Query Classes
+**********************/
+
+/* Phone and potrait displays - generic */
+@media only screen and (max-width: 500px) {
+    .mbn-nav {
+        min-height: 65px;
+    }
+
+    .mbn-logo {
+        position: fixed; 
+        top: 23px;
+        left: 5px; 
+        z-index: 9999;
+    }
+    
+    .mbn-logo-style {
+        width: 15%;
+        height: 15%; 
+        -webkit-filter: drop-shadow(1px 1px 4px #808285);
+    }
+    
+    .mbn-name {
+        font-family: roboto;
+        color: #6699cc;
+        font-size: 19pt;
+        font-weight: 500;
+        
+        position: fixed;
+        left: 85px;
+        top: 18px;
+    }
+    
+    .mbn-search-icon {
+        position: absolute;
+        top: 24px;
+        right: 0px;
+    }
+    
+    .mbn-search-style {
+        position: absolute; 
+        top: 29px;
+        right: 10px;
+        color: #339966;
+        /* width:6%; */
+    }
+    
+    .mbn-content-scroll {
+        position: absolute;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .mbn-content-offset {
+        top: 170px;
+    }
+    
+    .mbn-feed-scroll {
+        position: absolute;
+        top: 150px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .mbn-card-title {
+        background-color: #ffffff;
+        color: #339966 !important;
+
+        font-family: roboto;
+        font-weight: bold !important;
+        font-size: 14pt !important;
+
+        display: block;
+        margin-bottom: 0px !important;
+
+        width: 100%;
+        height: 40px !important;
+        padding: 7px !important;
+        
+        opacity: 0.7;
+    }
+    
+    .mbn-card-title-content {
+        background-color: #ffffff;
+        color: #339966 !important;
+
+        font-family: roboto;
+        font-weight: bold !important;
+        font-size: 14pt !important;
+
+        display: block;
+        margin-bottom: 0px !important;
+
+        width: 100vw;
+        height: 45px !important;
+        margin-top: 10px;
+        padding: 7px !important;
+
+        opacity: 1.0;
+    }
+
+    .mbn-menu-title {
+        background-color: #ffffff;
+        color: #6699cc !important;
+
+        font-family: roboto;
+        font-weight: bold !important;
+        font-size: 14pt !important;
+
+        display: block;
+        margin-bottom: 0px !important;
+
+        width: 100%;
+        height: 40px !important;
+        padding: 7px !important;
+
+        opacity: 0.7;
+    }
+
+    .mbn-card-fixed {
+        position: fixed;
+        z-index: 9998;
+        top: 65px;
+    }
+    
+    .mbn-card-fixed-content {
+        position: fixed;
+        z-index: 9998;
+        top: 58px;
+    }
+}
+
+/* iPhone 6 and other smaller phones */
+@media only screen and (max-width: 375px) {
+    .mbn-icon-text {
+        font-size: 90%;
+        color: #339966 !important;
+    }
+    
+    .mbn-icon-text-selected {
+        font-size: 90% !important;
+        color: #6699cc !important;
+    }
+}
+
+@media only screen and (width: 320px) {
+    .mbn-icon-text {
+        font-size: 78%;
+        color: #339966 !important;
+    }
+    
+    .mbn-icon-text-selected {
+        font-size: 78% !important;
+        color: #6699cc !important;
+    }
+}
+
+/* iPhone 6+ and bigger phones */
+@media only screen and (min-width: 400px) {
+    .mbn-icon-text {
+        font-size: 100%;
+        color: #339966 !important;
+    }
+    
+    .mbn-icon-text-selected {
+        font-size: 100% !important;
+        color: #6699cc !important;
+    }
+}
+
+/* Android tablets */
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+}
+
+/* iPad */
+@media only screen and (min-width: 993px) and (max-width: 1439px) {
+}
+
+/* Macbook Pro */
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+	/** Medium screen only */
+}
+
+@media only screen and (max-width: 600px) {
+	/* Small screen only */
+}
+
+@media only screen and (min-width: 601px) {
+	/* Medium and above */
+}
+
+@media only screen and (max-width: 992px) {
+	/* Medium and below */
+}
+
+@media only screen and (max-width: 600px) {
+	/* Small only */
+}

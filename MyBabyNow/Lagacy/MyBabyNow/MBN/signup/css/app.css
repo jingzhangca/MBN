@@ -1,0 +1,53 @@
+body {
+  overflow-x: hidden;
+
+  background: url(../images/bg.jpg) no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content {
+  padding-top: 15vh;
+  padding-bottom: 100px;
+}
+
+input[type=text].datepicker {
+  width: 94%;
+  margin-left: 3%;
+}
+
+#formSurvey.btn_right {
+  position: fixed; bottom: 20px; right: 20px;
+}
+
+.btn_left {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+}
+
+.error {
+    position: relative;
+    top: -1rem;
+    left: 0rem;
+    font-size: 0.8rem;
+    color: #FF4081;
+    display: block;
+  }
+
+/*section{
+    height:100vh; vh stands for view-port height, 1vh is 1% of screen height
+}*/

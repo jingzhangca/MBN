@@ -1,0 +1,81 @@
+<table>
+    <tr>
+        <td width="40px">
+            <img src="{{postUser.avatar}}" style="width: 40px; border: 2px solid #6699cc;" />
+        </td>
+        <td width="*" style="font-size: 100%; vertical-align: top;">
+            {{postUser.userName}}
+            <br />
+            <span style="color: #a9a9a9;">{{post.createdAt| date : "MMM d, y"}}</span>
+        </td>
+        <td width="30px">
+            <a dropdown>
+                <i class="fa fa-ellipsis-v" style="float: left; color: #339966;"></i>
+            </a>
+        </td>
+    </tr>
+</table>
+<table>
+    <!-- Image -->
+    <tr>
+        <td colspan="4" style="font-size: 100%; padding: 0">
+            <img ng-src={{post.image}} imgOrientation style="width: 100%">
+        </td>
+    </tr>
+    <!-- Content -->
+    <tr>
+        <td colspan="4" style="font-size: 100%;" ng-click="toggleFullContent()">
+            <div ng-if="!isFullContentShown()||!isLongContent(post)">
+                <h4>{{post.title}}</h4>
+                <p>
+                    {{post.content|truncate:200}}
+                </p>
+            </div>
+            <div ng-if="isFullContentShown() && isLongContent(post)">
+                <i class="material-icons right">close</i>
+                <h4>{{post.title}}</h4>
+                <p ng-bind-html="htmlContent">
+                </p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" style="font-size: 90%; color: #a9a9a9;">
+            {{post.likes}} {{post.likes==1 ? "Like": "Likes"}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{post.shares}} {{post.shares==1 ? "Share":
+            "Shares"}}
+        </td>
+    </tr>
+    <!-- Post Action: Comment Like Share -->
+    <tr>
+        <td width="20%"></td>
+        <td class="mbn-forum-action" ng-class="{'mbn-icon-selected':isLiked}" ng-click="addLikes(post)" width="25%">
+            <i class="fa fa-thumbs-o-up" ng-class="{'fa-thumbs-up':isLiked}"></i> {{isLiked? "Liked": "Like"}}
+        </td>
+        <td class="mbn-forum-action" width="30%" ng-click="showComment()">
+            <i class="fa fa-comment-o"></i> Comment
+        </td>
+        <td class="mbn-forum-action" width="25%">
+            <i class="fa fa-share-alt"></i> Share
+        </td>
+    </tr>
+</table>
+<!-- Comment Area -->
+<div class="card-content grey lighten-4" ng-show="isCommentShown()">
+    <span class="card-title activator"><i class="material-icons right" ng-click="hideComment()">close</i></span>
+    <br />
+    <!-- Submit New Comment -->
+    <div class="row" ng-form="commentForm">
+        <textarea placeholder="Enter your comment" class="materialize-textarea" style="color: black; display: block;" ng-model="comment.content"
+            focus-me="isCommentShown()" required></textarea>
+        <span><button class="waves-effect waves-teal btn-flat right" ng-click="addComment(post)" ng-disabled="commentForm.$invalid">Submit</button></span>
+    </div>
+    <!-- Display Previous Comment -->
+    <ul class="collection" ng-repeat="comment in comments" ng-show="hasComments(post)">
+        <post-comments></post-comments>
+    </ul>
+</div>
+<!-- Script generated; one for each post -->
+<!--<ul id="{{post.id}}" class="dropdown-content" ng-init="bindDropdown()">
+    <li ng-init="bindDropdown()"><a class="mbn-action-menu">Report</a></li>
+    <li ng-init="bindDropdown()"><a class="mbn-action-menu">Delete</a></li>
+</ul>-->
