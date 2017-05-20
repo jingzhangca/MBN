@@ -7,8 +7,10 @@
     <!-- App specific CSS and meta control for iOS. Need to add Android later. -->
     <link href="css/ion.rangeSlider.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/preloader/main.css">
-    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <!--<link href="css/normalize.css" rel="stylesheet" type="text/css">-->
     <link href="css/ion.rangeSlider.skinModern.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/font-baby/flaticon.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/mbn.css" rel="stylesheet" type="text/css">
     <meta content="width=device-width, initial-scale=1.0, scrollable=no, user-scalable=no" name="viewport">
     <title></title>
@@ -48,187 +50,155 @@
 
                 <br />
                 <div class="login-btn">
-                     <a class="js-btn" id="signUpBtn">Login</a>
+                    <a class="js-btn" id="signUpBtn">Login</a>
                 </div>
                 <br /><br />
                 <div>
 
                     <a class="login-options" href="#register_step1">Register a new account</a>
                 </div>
-            <div>
-                <a class="login-options" href="#forget_pwd">Forget password?</a>
+                <div>
+                    <a class="login-options" href="#forget_pwd">Forget password?</a>
 
+                </div>
             </div>
         </div>
-                    </div>
 
         <div id="register_step1">
-            <div class="content">
-                <div class="row btn_left">
-                    <div class="col s1 m4 l3">
-                        <a class="waves-effect waves-light btn" href="#signup">prev</a>
-                    </div>
-                    <div class="col s10 m4 l6 left-align"></div>
-                    <div class="col s1 m4 l3"></div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m4 l3">&nbsp;</div>
-                    <div class="input-field col s10 m4 l6">
-                        <h5 class="left-align">Let's get started. Tell us your email address.</h5>
-                        <input placeholder="john@mydomain.com" id="registerEmail" type="email" class="validate" name="registerEmail">
-                    </div>
-                    <div class="col s1 m4 l3">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m4 l3">
-                        &nbsp;
-                    </div>
-                    <div class="col s10 m4 l6">
-                        <div id="emailExistErrorMsg" class="error">
-                        </div>
-                    </div>
-                    <div class="col s1 m4 l3"></div>
-                </div>
-                <div class="row btn_right">
-                    <div class="col s1 m4 l3">
-                        &nbsp;
-                    </div>
-                    <div class="col s10 m4 l6">
-                        <div class="right-align">
-                            <a class="waves-effect waves-light btn" id="registerEmailBtn" href="#register_step2">next</a>
-                        </div>
-                    </div>
-                    <div class="col s1 m4 l3"></div>
-                </div>
+            <div class="login-back">
+                <span class="js-btn"><a href="#signup" style="font-weight:100"><i class="fa fa-chevron-left"></i> Back</a></span>
             </div>
+
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+            <p class="survey-appname">
+                My Baby Now
+            </p>
+            <br />
+
+            <div class="survey-text">
+                <p class="left-align">Let's get started. Tell us your email address.</p>
+                <br/>
+                <div class="input-field">
+                    <input placeholder="john@mydomain.com" id="registerEmail" type="email" class="validate mbn-field" name="registerEmail">
+                </div>
+                <br />
+            </div>
+
+            <div id="emailExistErrorMsg" class="error">
+            </div>
+
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" id="registerEmailBtn" href="#register_step2">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+
         </div>
+
+
+
         <div id="register_step2">
-            <div class="content">
-                <div class="row btn_left">
-                    <div class="col s1 m4 l3">
-                        <a class="waves-effect waves-light btn" href="#register_step1">prev</a>
-                    </div>
-                    <div class="col s10 m4 l6 left-align"></div>
-                    <div class="col s1 m4 l3"></div>
+            <div class="login-back">
+                <span class="js-btn"><a href="#register_step1" style="font-weight:100"><i class="fa fa-chevron-left"></i> Back</a></span>
+
+            </div>
+
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+            <p class="survey-appname">
+                My Baby Now
+            </p>
+            <br />
+
+            <div class="survey-text">
+                <p class="left-align">Check your email for a validation code. Enter the code below.</p>
+                <br/>
+                <div class="input-field">
+                    <input id="code" class="validate mbn-field" name="code">
+                    <div id="hiddenCode" hidden></div>
                 </div>
-                <div class="row">
-                    <div class="col s1 m4 l3">&nbsp;</div>
-                    <div class="input-field col s10 m4 l6">
-                        <h5 class="left-align">Check your email for a validation code. Enter the code below.</h5>
-                        <input id="code" class="validate" name="code">
-                        <div id="hiddenCode" hidden></div>
-                    </div>
-                    <div class="col s1 m4 l3">&nbsp;</div>
-                </div>
-                <div class="row btn_right">
-                    <div class="col s1 m4 l3">
-                        &nbsp;
-                    </div>
-                    <div class="col s10 m4 l6">
-                        <div class="right-align">
-                            <a class="waves-effect waves-light btn" id="verifyCodeBtn" href="#setPwd">next</a>
-                        </div>
-                    </div>
-                    <div class="col s1 m4 l3"></div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m2">&nbsp;</div>
-                    <div class="col s10 m8">
-                        <div class="center-align">
-                            <a id="noCode" href="#">I did not receive my code</a>
-                        </div>
-                    </div>
-                    <div class="col s1 m2">&nbsp;</div>
+                <br />
+
+                <div class="center-align">
+                    <a id="noCode" style="font-weight:100" href="#">I did not receive my code</a>
                 </div>
             </div>
+
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" id="verifyCodeBtn" href="#setPwd">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
         </div>
+
+
         <div id="setPwd">
-            <div class="content">
-                <div class="row btn_left">
-                    <div class="col s1 m4 l3">
-                        <a class="waves-effect waves-light btn" href="#register_step2">prev</a>
-                    </div>
-                    <div class="col s10 m4 l6 left-align"></div>
-                    <div class="col s1 m4 l3"></div>
+            <div class="login-back">
+                <span class="js-btn"><a href="#register_step2" style="font-weight:100"><i class="fa fa-chevron-left"></i> Back</a></span>
+
+            </div>
+
+
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+            <p class="survey-appname">
+                My Baby Now
+            </p>
+            <br />
+
+            <div class="survey-text">
+                <p>
+                    Wonderful! Your email is now validated so let's set up your password.
+                    <br />
+                </p>
+                <p style="font-size: 70%;">
+                    Your password should be at least 8 characters in length, includes a mix of upper and lower case, plus a number.
+                </p>
+
+                <div class="input-field col s10 m4">
+                    <input id="setPassword" placeholder="Password" type="password" class="validate mbn-field" name="setPassword">
                 </div>
-                <div class="row">
-                    <div class="col s1 m2">&nbsp;</div>
-                    <div class="col s10 m8">
-                        <h5 class="left-align">Email Validated!</h5>
-                        <h5 class="left-align">Let's start by setting up a password</h5>
-                    </div>
-                    <div class="col s1 m2">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m2">&nbsp;</div>
-                    <div class="input-field col s10 m4">
-                        <input id="setPassword" type="password" class="validate" name="setPassword">
-                        <label for="setPassword">Password</label>
-                    </div>
-                    <div class="input-field col s10 m4 offset-s1">
-                        <input id="confirmPassword" type="password" class="validate" name="confirmPassword">
-                        <label for="confirmPassword">Re-enter your password to confirm</label>
-                    </div>
-                    <div class="col s1 m2">&nbsp;</div>
-                </div>
-                <div class="row btn_right">
-                    <div class="col s1 m2">
-                        &nbsp;
-                    </div>
-                    <div class="col s10 m8 ">
-                        <div class="right-align">
-                            <a class="waves-effect waves-light btn" id="finishRegisterBtn">next</a>
-                        </div>
-                    </div>
-                    <div class="col s1 m2"></div>
+                <div class="input-field col s10 m4 offset-s1">
+                    <input id="confirmPassword" placeholder="Enter your password again" type="password" class="validate mbn-field" name="confirmPassword">
                 </div>
             </div>
+
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" id="finishRegisterBtn">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
         </div>
+
+
+
+
         <div id="forget_pwd">
-            <div class="content">
-                <div class="row btn_left">
-                    <div class="col s1 m4 l3">
-                        <a class="waves-effect waves-light btn" href="#signup">prev</a>
-                    </div>
-                    <div class="col s10 m4 l6 left-align"></div>
-                    <div class="col s1 m4 l3"></div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m2">&nbsp;</div>
-                    <div class="col s10 m8">
-                        <h5 class="left-align" id="forgetPwdLabel">Please confirm the email you have registered</h5>
-                    </div>
-                    <div class="col s1 m2">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m2">&nbsp;</div>
-                    <div class="col s10 m8">
-                        <label for="forgetPwdEmail">Email</label>
-                        <input id="forgetPwdEmail" type="email" class="validate" name="forgetPwdEmail">
-                    </div>
-                    <div class="col s1 m2">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m2">
-                        &nbsp;
-                    </div>
-                    <div class="col s10 m8 ">
-                        <div id="emailNotFoundErrorMsg" class="error">
-                        </div>
-                    </div>
-                    <div class="col s1 m2"></div>
-                </div>
-                <div class="row btn_right">
-                    <div class="col s1 m2">
-                        &nbsp;
-                    </div>
-                    <div class="col s10 m8 ">
-                        <div class="right-align">
-                            <a class="waves-effect waves-light btn" id="forgetPwdBtn">next</a>
-                        </div>
-                    </div>
-                    <div class="col s1 m2"></div>
-                </div>
+            <div class="login-back">
+                <span class="js-btn"><a href="#signup" style="font-weight:100"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+
+
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+            <p class="survey-appname">
+                My Baby Now
+            </p>
+            <br />
+
+            <p class="login-text">
+                Please enter the email that you used to register for My&nbsp;Baby&nbsp;Now.
+                <br />
+            </p>
+
+            <div class="input-field login-input">
+                <input id="forgetPwdEmail" type="email" class="validate mbn-field" name="forgetPwdEmail">
+            </div>
+
+            <div id="emailNotFoundErrorMsg" class="error">
+            </div>
+
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" id="forgetPwdBtn">Reset</a></span>
             </div>
         </div>
     </form>

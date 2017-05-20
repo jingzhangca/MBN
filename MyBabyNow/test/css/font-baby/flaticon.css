@@ -1,0 +1,111 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 04/04/2017 08:41
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-081-abacus:before { content: "\f100"; }
+.flaticon-081-apple:before { content: "\f101"; }
+.flaticon-081-apron:before { content: "\f102"; }
+.flaticon-081-baby:before { content: "\f103"; }
+.flaticon-081-baby-1:before { content: "\f104"; }
+.flaticon-081-baby-2:before { content: "\f105"; }
+.flaticon-081-baby-3:before { content: "\f106"; }
+.flaticon-081-baby-4:before { content: "\f107"; }
+.flaticon-081-baby-5:before { content: "\f108"; }
+.flaticon-081-baby-6:before { content: "\f109"; }
+.flaticon-081-baby-food:before { content: "\f10a"; }
+.flaticon-081-baby-stroller:before { content: "\f10b"; }
+.flaticon-081-baby-toy:before { content: "\f10c"; }
+.flaticon-081-balloon:before { content: "\f10d"; }
+.flaticon-081-bath:before { content: "\f10e"; }
+.flaticon-081-beach-ball:before { content: "\f10f"; }
+.flaticon-081-bell:before { content: "\f110"; }
+.flaticon-081-bicycle:before { content: "\f111"; }
+.flaticon-081-blocks:before { content: "\f112"; }
+.flaticon-081-book:before { content: "\f113"; }
+.flaticon-081-boomerang:before { content: "\f114"; }
+.flaticon-081-boy:before { content: "\f115"; }
+.flaticon-081-bunny:before { content: "\f116"; }
+.flaticon-081-cake:before { content: "\f117"; }
+.flaticon-081-candy:before { content: "\f118"; }
+.flaticon-081-car:before { content: "\f119"; }
+.flaticon-081-cookies:before { content: "\f11a"; }
+.flaticon-081-cradle:before { content: "\f11b"; }
+.flaticon-081-cradle-1:before { content: "\f11c"; }
+.flaticon-081-cradle-2:before { content: "\f11d"; }
+.flaticon-081-crib-toy:before { content: "\f11e"; }
+.flaticon-081-cutlery:before { content: "\f11f"; }
+.flaticon-081-diaper:before { content: "\f120"; }
+.flaticon-081-doll:before { content: "\f121"; }
+.flaticon-081-doll-1:before { content: "\f122"; }
+.flaticon-081-duck:before { content: "\f123"; }
+.flaticon-081-easel:before { content: "\f124"; }
+.flaticon-081-feeder:before { content: "\f125"; }
+.flaticon-081-feeder-1:before { content: "\f126"; }
+.flaticon-081-feeding-chair:before { content: "\f127"; }
+.flaticon-081-food:before { content: "\f128"; }
+.flaticon-081-game-console:before { content: "\f129"; }
+.flaticon-081-gamepad:before { content: "\f12a"; }
+.flaticon-081-girl:before { content: "\f12b"; }
+.flaticon-081-helicopter:before { content: "\f12c"; }
+.flaticon-081-ice-cream:before { content: "\f12d"; }
+.flaticon-081-kite:before { content: "\f12e"; }
+.flaticon-081-lodge:before { content: "\f12f"; }
+.flaticon-081-lollipop:before { content: "\f130"; }
+.flaticon-081-mill:before { content: "\f131"; }
+.flaticon-081-overall:before { content: "\f132"; }
+.flaticon-081-pacifier:before { content: "\f133"; }
+.flaticon-081-paint-brush:before { content: "\f134"; }
+.flaticon-081-pajamas:before { content: "\f135"; }
+.flaticon-081-pajamas-1:before { content: "\f136"; }
+.flaticon-081-paper-plane:before { content: "\f137"; }
+.flaticon-081-pen:before { content: "\f138"; }
+.flaticon-081-pencil:before { content: "\f139"; }
+.flaticon-081-porridge:before { content: "\f13a"; }
+.flaticon-081-puzzle:before { content: "\f13b"; }
+.flaticon-081-puzzle-1:before { content: "\f13c"; }
+.flaticon-081-radio:before { content: "\f13d"; }
+.flaticon-081-rattle:before { content: "\f13e"; }
+.flaticon-081-rattle-1:before { content: "\f13f"; }
+.flaticon-081-rattle-2:before { content: "\f140"; }
+.flaticon-081-robot:before { content: "\f141"; }
+.flaticon-081-rocking-horse:before { content: "\f142"; }
+.flaticon-081-safety-pin:before { content: "\f143"; }
+.flaticon-081-sand-bucket:before { content: "\f144"; }
+.flaticon-081-sandbox:before { content: "\f145"; }
+.flaticon-081-ship:before { content: "\f146"; }
+.flaticon-081-shoe:before { content: "\f147"; }
+.flaticon-081-skipping-rope:before { content: "\f148"; }
+.flaticon-081-swing:before { content: "\f149"; }
+.flaticon-081-teddy-bear:before { content: "\f14a"; }
+.flaticon-081-thermometer:before { content: "\f14b"; }
+.flaticon-081-toboggan:before { content: "\f14c"; }
+.flaticon-081-train:before { content: "\f14d"; }
+.flaticon-081-web:before { content: "\f14e"; }
+.flaticon-081-whirligig:before { content: "\f14f"; }
