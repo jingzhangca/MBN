@@ -1,15 +1,14 @@
 (function() {
     var app = angular.module("forum-directives", ['ui.materialize',
-        "djds4rce.angular-socialshare"
-    ]);
+    '720kb.socialshare']);
 
     app.config(function($locationProvider) {
         $locationProvider.html5Mode(true).hashPrefix("!");
     });
 
-    app.run(function($FB) {
-        $FB.init("1752593438362265");
-    });
+    // app.run(function($FB) {
+    //     $FB.init("1752593438362265");
+    // });
 
     app.directive("post", function() {
         return {

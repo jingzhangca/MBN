@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var app = angular.module('ghForum', ['forum-directives', 'igTruncate', 'ngSanitize', 'infinite-scroll', 'ngStorage', 'cp.ng.fix-image-orientation', 'angular-inview', 'ui.materialize', 'ngFileUpload']);
+    var app = angular.module('ghForum', ['forum-directives', 'igTruncate', 'ngSanitize', 'infinite-scroll', 'ngStorage', 'cp.ng.fix-image-orientation', 'angular-inview', 'ui.materialize', 'ngFileUpload','720kb.socialshare']);
     var posts = [];
 
     
