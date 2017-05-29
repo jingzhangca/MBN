@@ -1,0 +1,34 @@
+<li class="collection-item avatar">
+    <!-- User Avatar -->
+    <img data-ng-src={{user.profile_photo}} class="circle">
+    <!-- User Name -->
+    <b>{{user.user_name}}</b>
+    <!-- Comment Content -->
+    {{comment.content}}
+    <br />
+    <br />
+    <!-- Comment Actions: Like and Comment -->
+    <table>
+        <tr>
+            <!-- Display how many likes -->
+
+            <td width="20%"></td>
+            <td width='40%' style="font-size: 90%; color: #a9a9a9;">{{comment.likes}} <span style="font-size: 90%; color: #a9a9a9;">{{comment.likes==1 ? "Like": "Likes"}}&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+
+            <td width="20%" class="mbn-forum-action" ng-class="{'mbn-icon-selected disabled':isLiked}" ng-click="addLikes(comment)"><i class="fa fa-thumbs-o-up" ng-class="{'fa-thumbs-up':isLiked}"></i>
+            </td>
+            <td width='20%' class="mbn-forum-action" ng-click="toggleCommentArea(comment)"><i class="fa fa-comment-o"></i></td>
+        </tr>
+    </table>
+    <!-- Display Second Level Comments -->
+    <div class="row" ng-show="isCommentAreaShown(comment)">
+        <ul class="collection" ng-repeat="secondLevelComment in secondLevelComments">
+            <second-level-comments></second-level-comments>
+        </ul>
+        <!-- Submit New Second Level Comments -->
+        <div class="row" ng-form="secondCommentForm">
+            <textarea placeholder="Your comments" class="materialize-textarea" ng-model="secondLevelComment.content" required></textarea>
+            <span><button class="mbn-button pull-right" ng-click="addComment(comment)" ng-disabled="secondCommentForm.$invalid">Submit</button></span>
+        </div>
+    </div>
+</li>

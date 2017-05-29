@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Need to localise this later on. -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Already localised -->
+    <link rel="stylesheet" href="font-icons/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-baby/flaticon.css">
+
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/mbn.css" media="screen,projection" />
+
+    <!-- iOS set up to go into mobile mode. Need to set for Android accordingly. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, scrollable=no, user-scalable=no" />
+
+    <!-- Load the scripts but import jQuery before materialise.js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/mbn.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).ontouchmove(function(event) {
+                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="mbn-logo">
+        <img src="images/logo.png" class="mbn-logo-style" />
+    </div>
+    
+    <div class="navbar-fixed">
+        <nav class="mbn-nav">
+            <div class="nav-wrapper">
+                <a class="mbn-name">My Baby Now</a>
+                <i class="fa fa-search fa-2x mbn-search-style"></i>
+            </div>
+        </nav>  
+    </div>
+
+    <div class="mbn-content">
+        <div class="card mbn-card" onclick="">
+            <div class="card-image">
+                <img src="images/favorites.png" />
+                <span class="card-title mbn-card-title">Favourites</span>
+            </div>
+        </div>
+        <div class="card mbn-card">
+            <div class="card-image">
+                <img src="images/fsp.png" />
+                <span class="card-title mbn-card-title">Feed, play, sleep patterns</span>
+            </div>
+        </div>
+        <div class="card mbn-card" onclick="Load('menu-bf')">
+            <div class="card-image">
+                <img src="images/breastfeeding.png" />
+                <span class="card-title mbn-card-title">Breastfeeding</span>
+            </div>
+        </div>
+        <div class="card mbn-card" onclick="Load('menu-recipes')">
+            <div class="card-image">
+                <img src="images/recipes.png" />
+                <span class="card-title mbn-card-title">Recipes</span>
+            </div>
+        </div>
+        <div class="card mbn-card" onclick="Load('menu-for-parents')">
+            <div class="card-image">
+                <img src="images/favorites.png" />
+                <span class="card-title mbn-card-title">For parents</span>
+            </div>
+        </div>
+        <div class="card mbn-card">
+            <div class="card-image">
+                <img src="images/fsp.png" />
+                <span class="card-title mbn-card-title">Feed, play, sleep patterns</span>
+            </div>
+        </div>
+        <div class="card mbn-card">
+            <div class="card-image">
+                <img src="images/breastfeeding.png" />
+                <span class="card-title mbn-card-title">Breastfeeding</span>
+            </div>
+        </div>
+        <div class="card mbn-card">
+            <div class="card-image">
+                <img src="images/recipes.png" />
+                <span class="card-title mbn-card-title">Recipes</span>
+            </div>
+        </div>
+    </div>
+    
+    <br /><br /><br />
+
+    <div class="navbar-fixed mbn-footer hide-on-med-and-up">
+        <nav class="mbn-nav">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col mbn-icon" onclick="Load('feed');">
+                            <p>
+                                <img src="images/feed.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">My baby</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('topics');">
+                            <p class="mbn-icon-selected">
+                                <img src="images/topics-s.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text-selected" >Topics</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('tools');">
+                            <p>
+                                <img src="images/tools.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">Tools</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('forum');">
+                            <p>
+                                <img src="images/forum.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">Forum</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('more');">
+                            <p>
+                                <img src="images/more.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">More</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

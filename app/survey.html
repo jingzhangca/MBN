@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Need to localise this later on. -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Already localised -->
+    <link rel="stylesheet" type="text/css" href="font-baby/flaticon.css">
+    <link rel="stylesheet" href="font-icons/css/font-awesome.min.css">
+
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/mbn.css" media="screen,projection" />
+
+    <link rel="stylesheet" href="css/preloader/main.css">
+
+    <!-- iOS set up to go into mobile mode. Need to set for Android accordingly. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, scrollable=no, user-scalable=no" />
+
+    <!-- Load the scripts but import jQuery before materialise.js -->
+
+</head>
+
+<body class="login-bg">
+    <form id="formValidate">
+        <input type="hidden" id='signUpEmail' name="signup_email">
+
+        <!-- This is one complete section (or page of the survey). -->
+        <div id="main">
+            <div class="login-back">
+                <span onclick=""><i class="fa fa-chevron-left"></i> Back</span><br /><br />
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p>
+                    Let's start by having you tell us more about yourself.
+                    <br /><br /> Are you...
+                </p>
+
+                <select id="carer_role" name="carer_role" class="browser-default">
+                    <option disabled selected value="">
+                    </option>
+                    <option value="pregnant">
+                        Pregnant
+                    </option>
+                    <option value="mum">
+                        Mum
+                    </option>
+                    <option value="dad">
+                        Dad
+                    </option>
+                    <option value="grandparent">
+                        Grandparent
+                    </option>
+                    <option value="other_carer">
+                        Other carer
+                    </option>
+                    <option value="health_practitioner">
+                        Health practitioner/researcher/student
+                    </option>
+                </select>
+            </div>
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" id="main_next">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <!-- This is one complete section (or page of the survey). -->
+        <div id="pregnant">
+            <div class="login-back">
+                <span><a class="js-btn" style="font-weight:100" href="#main"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p>
+                    What is your first name?
+                    <br />
+                </p>
+                <div class="input-field">
+                    <input placeholder="Mum's name" name="pregnant_mum_name" type="text" class="validate mbn-field">
+                </div>
+                <p>
+                    What is your baby's expected due date?
+                </p>
+
+                <div class="">
+                    <input class="datepicker" name="baby_due_date" placeholder="Tap here to select date." type="date">
+                </div>
+            </div>
+
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" href="#thanks">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <!-- This is one complete section (or page of the survey). -->
+        <div id="baby_info1">
+            <div class="login-back">
+                <span><a class="js-btn" style="font-weight:100" href="#main"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p>
+                    What is your baby's first name?
+                    <br />
+                </p>
+                <div class="input-field">
+                    <input placeholder="Baby's first name" id="baby_first_name" name="baby_first_name" type="text" class="validate mbn-field">
+                </div>
+                <p>
+                    What is your baby's date of birth?
+                    <br/>
+                    <input class="datepicker" name="baby_dob" type="date">
+                </p>
+                <p id="baby_gender_label">
+                    Is your baby a...
+                </p>
+                <select name="baby_gender" class="browser-default">
+                    <option disabled selected value="">
+                    </option>
+                    <option value="0">
+                        Boy
+                    </option>
+                    <option value="1">
+                        Girl
+                    </option>
+                </select>
+                <div class="error hide">Please select one option</div>
+            </div>
+
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" href="#baby_info2">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <!-- This is one complete section (or page of the survey). -->
+        <div id="baby_info2">
+            <div class="login-back">
+                <span><a class="js-btn" style="font-weight:100" href="#baby_info1"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p id="feeding_method_label">
+                    What is your baby's current feeding method?
+                </p>
+                <select id="feeding_method" name="feeding_method" class="browser-default">
+                    <option disabled selected value="">
+                    </option>
+                    <option value="breast">
+                        Breastfeeding
+                    </option>
+                    <option value="formula">
+                        Formula feeding
+                    </option>
+                    <option value="mixed">
+                        Both breast and formula feeding
+                    </option>
+                </select>
+                <div class="error hide">Please select one option</div>
+                <div class="hide" id="formula_age">
+                    <div class="col s10 m4 l6">
+                        How old was your baby when you first introduced formula?
+                        <br />
+                        <span id="formula_label">0</span> weeks
+                        <p class="range-field">
+                            <input id="formula_slider" name="formula_age" type="text">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" href="#baby_info3">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <div id="baby_info3">
+            <div class="login-back">
+                <span><a class="js-btn" style="font-weight:100" href="#baby_info2"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text" id="solid_foods">
+                <p id="solid_foods_label">
+                    Has your baby started eating solid foods?
+                </p>
+                <select id="sf_dropdown" name="sf_flag" class="browser-default">
+                    <option disabled selected value="">
+                    </option>
+                    <option value="yes">
+                        Yes
+                    </option>
+                    <option value="no">
+                        No
+                    </option>
+                    <option value="na">
+                        I don't know
+                    </option>
+                </select>
+                <div class="error hide">Please select one option</div>
+
+                <div class="survey-text hide" id="sf_age">
+                    <p>
+                        How old was your baby when you first introduced solids?
+                        <br/>
+                        <span id="sf_label">0</span> weeks
+                    </p>
+                    <p class="range-field">
+                        <input id="sf_slider" name="sf_age" type="text">
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" href="#carer_info1">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <div id="carer_info1">
+            <div class="login-back">
+                <span><a class="js-btn" style="font-weight:100" href="#baby_info3"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p>
+                    What is your first name?
+                </p>
+                <p>
+                    <input class="validate" id="carer_name" name="carer_name" type="text">
+                    <div class="errorTxt1"></div>
+                </p>
+                <p>
+                    What is your postal code?
+                </p>
+                <p>
+                    <input class="validate" id="postcode" name="postcode" type="tel">
+                </p>
+            </div>
+            <div class="survey-text">
+                <p>
+                    What is your age?
+                </p>
+                <select id="carer_age" name="carer_age" class="browser-default">
+                    <option disabled selected value="">
+                    </option>
+                    <option value="12-17">
+                        12-17 years
+                    </option>
+                    <option value="18-24">
+                        18-24 years
+                    </option>
+                    <option value="25-34">
+                        25-34 years
+                    </option>
+                    <option value="35-40">
+                        35-40 years
+                    </option>
+                    <option value="40-50">
+                        40-50 years
+                    </option>
+                    <option value="50-60">
+                        50-60 years
+                    </option>
+                    <option value="60-70">
+                        60-70 years
+                    </option>
+                    <option value="70-80">
+                        70-80 years
+                    </option>
+                    <option value="80-over">
+                        80 or more years
+                    </option>
+                </select>
+                <div class="error hide">Please select one option</div>
+            </div>
+
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" href="#carer_info2">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <div id="carer_info2">
+            <div class="login-back">
+                <span><a class="js-btn" style="font-weight:100" href="#carer_info1"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p>
+                    What is the main language you speak at home?
+                </p>
+                <select id="carer_language" name="language" class="browser-default">
+                    <option disabled selected value="">
+                        Choose your option
+                    </option>
+                    <option value="english">
+                        English
+                    </option>
+                    <option value="mandarin">
+                        Mandarin
+                    </option>
+                    <option value="italian">
+                        Italian
+                    </option>
+                    <option value="arabic">
+                        Arabic
+                    </option>
+                    <option value="cantonese">
+                        Cantonese
+                    </option>
+                    <option value="greek">
+                        Greek
+                    </option>
+                    <option value="vietnamese">
+                        Vietnamese
+                    </option>
+                    <option value="spanish">
+                        Spanish
+                    </option>
+                    <option value="hindi">
+                        Hindi
+                    </option>
+                    <option value="tagalog">
+                        Tagalog
+                    </option>
+                    <option value="german">
+                        German
+                    </option>
+                    <option value="other">
+                        Other
+                    </option>
+                </select>
+                <div class="error hide">Please select one option</div>
+            </div>
+
+            <div class="survey-text hide" id="other_language">
+                <p>
+                    Please specify the language spoken at home.
+                </p>
+                <p>
+                    <input class="validate" id="language" name="other_language" type="text">
+                </p>
+            </div>
+
+            <br />
+
+            <div class="survey-text">
+                <p>
+                    What is your country of birth?
+                </p>
+                <select id="carer_country" name="carer_country" class="browser-default">
+                    <option disabled selected value="">
+                        Choose your option
+                    </option>
+                    <option value="Australia">
+                        Australia
+                    </option>
+                    <option value="New Zealand">
+                        New Zealand
+                    </option>
+                    <option value="UK">
+                        United Kingdom, Channel Islands and Isle of Man
+                    </option>
+                    <option value="China">
+                        China
+                    </option>
+                    <option value="India">
+                        India
+                    </option>
+                    <option value="Philippines">
+                        Philippines
+                    </option>
+                    <option value="Vietnam">
+                        Vietnam
+                    </option>
+                    <option value="Italy">
+                        Italy
+                    </option>
+                    <option value="South Africa">
+                        South Africa
+                    </option>
+                    <option value="Malaysia">
+                        Malaysia
+                    </option>
+                    <option value="other">
+                        Other
+                    </option>
+                </select>
+                <div class="error hide">Please select one option</div>
+            </div>
+
+            <div class="survey-text hide" id="other_country">
+                <p for="country">
+                    Please specify your country of birth.
+                </p>
+                <p>
+                    <input class="validate" id="country" name="other_country" type="text">
+                </p>
+            </div>
+
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" href="#carer_info3">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <div id="carer_info3">
+            <div class="login-back">
+                <span><a class="js-btn" style="font-weight:100" href="#carer_info2"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p>
+                    How did you find out about this App?
+                </p>
+                <select id="source" name="from_where" class="browser-default">
+                    <option disabled selected value="">
+                        Choose your option
+                    </option>
+                    <option value="Facebook">
+                        Facebook
+                    </option>
+                    <option value="Parenting website">
+                        Parenting website
+                    </option>
+                    <option value="Health professional recommendation">
+                        Health professional recommendation
+                    </option>
+                    <option value="Family">
+                        Family
+                    </option>
+                    <option value="Friends">
+                        Friends
+                    </option>
+                    <option value="other">
+                        Other
+                    </option>
+                </select>
+                <div class="error hide">Please select one option.</div>
+            </div>
+
+            <div class="survey-text hide" id="other_source">
+                <p>
+                    Please specify how did you find out about this App?
+                </p>
+                <p>
+                    <input class="validate" name="other_from_where" type="text">
+                </p>
+            </div>
+
+            <div class="survey-text">
+                <p>
+                    What is your mobile phone number? (optional)
+                </p>
+                <p>
+                    <input class="validate" id="phone" name="mobile" type="tel">
+                </p>
+            </div>
+
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" href="#thanks">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <div id="health_practitioner">
+            <div class="login-back">
+                <span><a class="js-btn" style="font-weight:100" href="#main"><i class="fa fa-chevron-left"></i> Back</a></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p>
+                    Could you please tell us your specific role?
+                </p>
+                <select id="hp_role" name="health_practitioner_role" class="browser-default">
+                    <option disabled selected value="">
+                    </option>
+                    <option value="Maternal and child nurse">
+                        Maternal and child nurse/ child and family nurse
+                    </option>
+                    <option value="Lactation consultant">
+                        Lactation consultant
+                    </option>
+                    <option value="Midwife">
+                        Midwife
+                    </option>
+                    <option value="GP">
+                        GP
+                    </option>
+                    <option value="Practice nurse">
+                        Practice nurse
+                    </option>
+                    <option value="Dietitian">
+                        Dietitian
+                    </option>
+                    <option value="Social worker">
+                        Social worker
+                    </option>
+                    <option value="Researcher">
+                        Researcher
+                    </option>
+                    <option value="Student">
+                        Student
+                    </option>
+                    <option value="other">
+                        Other
+                    </option>
+                </select>
+                <div class="error hide">Please select one option</div>
+            </div>
+
+            <div class="survey-text hide" id="other_hp">
+                <p>
+                    Could you please tell us your specific role?
+                </p>
+                <p>
+                    <input class="validate" id="hp_input" name="other_health_practitioner_role" type="text">
+                </p>
+            </div>
+
+            <div class="survey-text">
+                <p>
+                    What is your post code of the location where you work or study?
+                </p>
+                <p>
+                    <input class="validate" id="postcode" name="postcode" type="tel">
+                </p>
+                <p>
+                    Can you please tell us the organisation you work for or where you study?
+                </p>
+                <p>
+                    <input class="validate" id="organisation" name="health_practitioner_organisation" type="text">
+                </p>
+            </div>
+
+            <!-- Ends here for what you want to collect on this screen with the NEXT button below. -->
+            <p><br/></p>
+            <div class="login-next">
+                <span><a class="js-btn" style="font-weight:100" href="#thanks">Next <i class="fa fa-chevron-right"></i></a></span>
+            </div>
+        </div>
+
+        <!-- This is one complete section (or page of the survey). -->
+        <div id="thanks">
+            <div class="login-back">
+                <span><i>&nbsp;</i></span>
+            </div>
+            <div class="survey-logo">
+                <img src="images/logo.png" class="login-logo" />
+            </div>
+
+            <!-- This is one section of the survey text -->
+            <div class="survey-text">
+                <p>
+                    Saving survey information...
+                </p>
+            </div>
+            <!-- Loading Overlay -->
+            <div id="loader-wrapper">
+                <div id="loader"></div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/mbn.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/survey.js"></script>
+    <script src="js/range.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/serializeToJSON.js"></script>
+    <script src="js/jquery.session.js"></script>
+
+</body>
+
+</html>

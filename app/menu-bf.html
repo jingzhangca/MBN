@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Need to localise this later on. -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Already localised -->
+    <link rel="stylesheet" href="font-icons/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-baby/flaticon.css">
+    
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/mbn.css" media="screen,projection" />
+
+    <!-- iOS set up to go into mobile mode. Need to set for Android accordingly. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, scrollable=no, user-scalable=no" />
+
+    <!-- Load the scripts but import jQuery before materialise.js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/mbn.js"></script>
+    <script>
+                
+        var lastScrollTop = 0; // Track the last event
+        var objToCheck;
+        var lastScrollAction = "";
+        
+        $(document).ready(function() {
+            objToCheck = $("#section-title");
+            $("#section-card-min").hide();
+        
+            /*
+            $(document).ontouchmove(function(event) {
+                event.preventDefault();
+            });
+            */
+        });
+        
+        function doLoad(w) {
+            window.location = w;
+        }
+        
+        $(window).scroll(function() {
+            var st = objToCheck.offset().top - $(window).scrollTop();
+
+            if(st < lastScrollTop) {
+                if(parseInt(st) < 65 && lastScrollAction == "up") {
+                    // Change the type of card to display.
+                    $("#section-card").hide();
+                    $("#section-card-min").show();
+                    
+                    // Modify CSS to add the extra 50px room for content to be in the right place.
+                    $("#section-content").addClass("mbn-content-offset");
+                    
+                    // Set where to monitor for point of switch.
+                    objToCheck = $("#section-content");
+                }
+                
+                lastScrollAction = "up";
+            }
+            else {
+                if(parseInt(st) > 65 && lastScrollAction == "down") {
+                    // Reverse the card to display
+                    $("#section-card").show();
+                    $("#section-card-min").hide();
+                    
+                    // Modify CSS to remove the offset created as a result of swapping the display card.
+                    $("#section-content").removeClass("mbn-content-offset");
+                    
+                    // Set where to monitor for point of switch
+                    objToCheck = $("#section-title");
+                }
+                
+                lastScrollAction = "down";
+            }
+
+            lastScrollTop = st; // Remember this as the current position
+        });
+    </script>
+</head>
+<body>
+    <div class="mbn-logo">
+        <img src="images/logo.png" class="mbn-logo-style" />
+    </div>
+    
+    <div class="navbar-fixed">
+        <nav class="mbn-nav">
+            <div class="nav-wrapper">
+                <a class="mbn-name">Flynn Now</a>
+                <i class="fa fa-search fa-2x mbn-search-style"></i>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- Two different display cards -->
+    <div class="card mbn-card" id="section-card">
+        <div class="card-image">
+            <img src="images/favorites.png" />
+            <span class="card-title mbn-card-title" id="section-title" onclick="Load('topics')">
+                <i class="fa fa-chevron-left"></i> Breastfeeding
+            </span>
+        </div>
+    </div>
+
+    <div class="card mbn-card-fixed-content" id="section-card-min">
+        <span class="card-title mbn-card-title-content" style="min-width: 100vw !important;" id="section-title" onclick="Load('topics')">
+            <i class="fa fa-chevron-left"></i> Breastfeeding
+        </span>
+    </div>
+
+    <!-- Content -->
+    <div class="mbn-content" id="section-content">
+            <table class="striped" id="content">
+                <tr>
+                    <td colspan="3"><b>The basics</b></td>
+                </tr>
+                <tr onclick="Load('bf-1');">
+                    <td style="width: 5%;"></td>
+                    <td class="mbn-menu-desc">Why breastfeed</td>
+                    <td style="width: 8%"><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Milk supply and latch</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Feeding positions</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">How often, how long</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Night feeds</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Dummies and bottles</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Poo and wee</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">When, how to stop</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Helpful products</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3"><b>Milk supply</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">How it works</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Low milk supply</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Make more milk</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Too much milk</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3"><b>Common issues</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Blocked ducts and mastitis</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Pain and cracks</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Infection</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Tongue-tie / upper-lip tie</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Sleepy baby</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Wind and colic</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Breast refusal</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Biting and teething</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Intolerance and allergies</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="mbn-menu-desc">Reflux</td>
+                    <td><i class="fa fa-angle-right fa-lg"></i></td>
+                </tr>
+            </table>
+            <p></p>
+    </div>
+
+    <div class="navbar-fixed mbn-footer hide-on-med-and-up">
+        <nav class="mbn-nav">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col mbn-icon" onclick="Load('feed');">
+                            <p>
+                                <img src="images/feed-s.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">My baby</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('topics');">
+                            <p class="mbn-icon-selected">
+                                <img src="images/topics-s.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text-selected">Topics</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('tools');">
+                            <p>
+                                <img src="images/tools.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">Tools</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('forum');">
+                            <p>
+                                <img src="images/forum.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">Forum</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('more');">
+                            <p>
+                                <img src="images/more.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">More</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Need to localise this later on. -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+    <!-- Already localised -->
+    <link rel="stylesheet" type="text/css" href="font-baby/flaticon.css">
+    <link rel="stylesheet" href="font-icons/css/font-awesome.min.css">
+
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/mbn.css" media="screen,projection" />
+
+    <!-- iOS set up to go into mobile mode. Need to set for Android accordingly. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, scrollable=no, user-scalable=no" />
+
+    <!-- Load the scripts but import jQuery before materialise.js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/mbn.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).ontouchmove(function(event) {
+                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="mbn-logo">
+        <img src="images/logo.png" class="mbn-logo-style" />
+    </div>
+    
+    <div class="navbar-fixed">
+        <nav class="mbn-nav">
+            <div class="nav-wrapper">
+                <a class="mbn-name">Flynn Now</a>
+                <i class="fa fa-search fa-2x mbn-search-style"></i>                
+            </div>
+        </nav>  
+    </div>
+
+    <div class="mbn-content">
+        <div class="card-panel mbn-avatar-card">
+            <span>
+                <img src="images/avatar.png" style="width: 20vw; float: left; margin-right: 20px; margin-left: 0px !important; border: 4px solid #6699cc;" />
+                <p class="mbn-avatar-text">Hello <span style="color: #6699cc; font-weight: bold;">Rachel<br />Flynn</span> is 20 weeks old</p>
+            </span>
+        </div>
+        <div class="mbn-feed-scroll">
+            <p class="mbn-section">Updates</p>
+            <p class="mbn-text">
+                <table>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">There are new posts in the <a onclick="alert('hello');">forum!</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">
+                            Congrats on the birth of your baby! Cuddles and feeding at your breast is soothing and helps them adapt to their new surrounds - <b style="color: #339966;">more here.</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">
+                            Tempted to prop Flynn up with a bottle? This can be unsafe and babies need this cuddle time! Read more on bottle feeding <b style="color: #339966;">here.</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">There are new posts in the <b style="color: #339966;">forum!</b></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">
+                            Congrats on the birth of your baby! Cuddles and feeding at your breast is soothing and helps them adapt to their new surrounds - <b style="color: #339966;">more here.</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">
+                            Tempted to prop Flynn up with a bottle? This can be unsafe and babies need this cuddle time! Read more on bottle feeding <b style="color: #339966;">here.</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">There are new posts in the <b style="color: #339966;">forum!</b></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">
+                            Congrats on the birth of your baby! Cuddles and feeding at your breast is soothing and helps them adapt to their new surrounds - <b style="color: #339966;">more here.</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bullet.png" width="20px;" /></td>
+                        <td class="mbn-update-text">
+                            Tempted to prop Flynn up with a bottle? This can be unsafe and babies need this cuddle time! Read more on bottle feeding <b style="color: #339966;">here.</b>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <p>
+                <br /><br /><br />
+            </p>
+        </div>
+    </div>
+
+    <div class="navbar-fixed mbn-footer hide-on-med-and-up">
+        <nav class="mbn-nav">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col mbn-icon">
+                            <p class="mbn-icon-selected" onclick="Load('feed');">
+                                <img src="images/feed-s.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text-selected">My baby</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('topics');">
+                            <p>
+                                <img src="images/topics.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">Topics</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('tools');">
+                            <p>
+                                <img src="images/tools.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">Tools</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('forum');">
+                            <p>
+                                <img src="images/forum.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">Forum</span>
+                            </p>
+                        </div>
+                        <div class="col mbn-icon" onclick="Load('more');">
+                            <p>
+                                <img src="images/more.png" style="width:30%;" />
+                                <br />
+                                <span class="mbn-icon-text">More</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>
